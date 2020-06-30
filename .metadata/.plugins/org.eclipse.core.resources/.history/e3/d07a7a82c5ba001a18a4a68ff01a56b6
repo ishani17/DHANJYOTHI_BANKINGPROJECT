@@ -1,0 +1,45 @@
+package com.dhanjyothi.netbankdev;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@Controller
+public class CustomerRegistrationController {
+	
+	@RequestMapping("/regform")
+	public String Register()
+	{
+		return "registration";
+	}
+	
+	
+	@RequestMapping("/userdetails")
+	public String userInfo(CustomerRegistration reg)
+	{
+		
+		ModelMap model= new ModelMap();
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		model.addAttribute("name", reg.getFirstName());
+		
+		
+		
+		
+		ModelAndView mv= new ModelAndView("user-details");
+		mv.addObject("regObj",reg);
+		return mv;
+	}
+
+}
